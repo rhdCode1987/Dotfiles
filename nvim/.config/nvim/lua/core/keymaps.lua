@@ -30,10 +30,10 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- move text up and down
-keymap.set("v", "<∆>", ":m '>+1<CR>gv=gv")
+-- normal
+keymap.set("n", "<S-j>", ":m .+1<CR>==", {noremap = true, silent = true})
+keymap.set("n", "<S-k>", ":m .-2<CR>==", {noremap = true, silent = true}) 
+-- visual
+keymap.set("v", "<S-j>", ":m '>+1<CR>gv=gv", {noremap = true, silent = true})
+keymap.set("v", "<S-k>", ":m '<-2<CR>gv=gv", {noremap = true, silent = true})
 
---Tmux
-keymap.set({"n", "v", "i"}, "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
-keymap.set({"n", "v", "i"}, "<C-j>", "<cmd>TmuxNavigateDown<CR>")
-keymap.set({"n", "v", "i"}, "<C-k>", "<cmd>TmuxNavigateUp<CR>")
-keymap.set({"n", "v", "i"}, "<C-l>", "<cmd>TmuxNavigateRight<CR>")
